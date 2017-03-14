@@ -106,19 +106,6 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dwu-4y-T2D">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="txA-vz-0pQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="txA-vz-0pQ" firstAttribute="centerY" secondItem="Dwu-4y-T2D" secondAttribute="centerY" id="BQO-7p-SZt"/>
-                                    <constraint firstAttribute="bottom" secondItem="txA-vz-0pQ" secondAttribute="bottom" id="NhS-GA-6hh"/>
-                                    <constraint firstItem="txA-vz-0pQ" firstAttribute="centerX" secondItem="Dwu-4y-T2D" secondAttribute="centerX" id="Njx-HP-Un0"/>
-                                    <constraint firstAttribute="trailing" secondItem="txA-vz-0pQ" secondAttribute="trailing" id="cLP-PO-IU2"/>
-                                    <constraint firstItem="txA-vz-0pQ" firstAttribute="top" secondItem="Dwu-4y-T2D" secondAttribute="top" id="eJw-hY-33d"/>
-                                    <constraint firstItem="txA-vz-0pQ" firstAttribute="leading" secondItem="Dwu-4y-T2D" secondAttribute="leading" id="nSh-Fr-32R"/>
-                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -132,7 +119,6 @@
                     <navigationItem key="navigationItem" id="e1F-qD-bTl"/>
                     <connections>
                         <outlet property="imageScrollView" destination="Dwu-4y-T2D" id="dcP-a8-9d4"/>
-                        <outlet property="podImageView" destination="txA-vz-0pQ" id="Nzo-xO-p10"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n5C-2q-lbm" userLabel="First Responder" sceneMemberID="firstResponder"/>
