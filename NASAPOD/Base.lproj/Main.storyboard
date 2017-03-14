@@ -1,14 +1,31 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Mjv-NW-cfb">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Split View Controller-->
+        <scene sceneID="Vha-kx-rSW">
+            <objects>
+                <splitViewController id="Mjv-NW-cfb" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="bZy-vP-rrj" kind="relationship" relationship="masterViewController" id="8SQ-Jn-jsZ"/>
+                        <segue destination="FQS-1u-oaT" kind="relationship" relationship="detailViewController" id="hVI-Js-a6h"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i17-lD-7Sq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1409" y="24"/>
+        </scene>
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="NASAPOD" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +33,146 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="iah-La-FsF">
+                                <rect key="frame" x="0.0" y="318" width="375" height="180"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="511129724.20105499">
+                                    <!--2017-03-13 20:28:44 +0000-->
+                                </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-166543200">
+                                    <!--1995-09-22 10:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="1164884400">
+                                    <!--2037-11-30 11:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cE9-Fj-Lmk">
+                                <rect key="frame" x="93" y="205" width="188" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="See today's POD"/>
+                                <connections>
+                                    <action selector="getTodaysPOD:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mNa-3r-BdU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Or choose a past image:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31s-sc-UjO">
+                                <rect key="frame" x="58" y="275" width="259" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NASA's Astronomy Pictore of the Day goes back to 1995!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMS-hl-sXJ">
+                                <rect key="frame" x="24" y="118" width="335" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ut-ld-STJ">
+                                <rect key="frame" x="164" y="522" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="OK"/>
+                                <connections>
+                                    <action selector="getPODFromDate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I8h-H4-lqa"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="LqV-j7-6Lf"/>
+                    <connections>
+                        <outlet property="datePicker" destination="iah-La-FsF" id="3XO-vA-V76"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="561" y="-266"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eWR-5j-bTd">
+            <objects>
+                <viewController id="1Mb-cQ-PFN" customClass="PODViewController" customModule="NASAPOD" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vFB-ER-Vqz"/>
+                        <viewControllerLayoutGuide type="bottom" id="kfU-8D-ULQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8Aa-Dj-TsN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dwu-4y-T2D">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="txA-vz-0pQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="txA-vz-0pQ" firstAttribute="centerY" secondItem="Dwu-4y-T2D" secondAttribute="centerY" id="BQO-7p-SZt"/>
+                                    <constraint firstAttribute="bottom" secondItem="txA-vz-0pQ" secondAttribute="bottom" id="NhS-GA-6hh"/>
+                                    <constraint firstItem="txA-vz-0pQ" firstAttribute="centerX" secondItem="Dwu-4y-T2D" secondAttribute="centerX" id="Njx-HP-Un0"/>
+                                    <constraint firstAttribute="trailing" secondItem="txA-vz-0pQ" secondAttribute="trailing" id="cLP-PO-IU2"/>
+                                    <constraint firstItem="txA-vz-0pQ" firstAttribute="top" secondItem="Dwu-4y-T2D" secondAttribute="top" id="eJw-hY-33d"/>
+                                    <constraint firstItem="txA-vz-0pQ" firstAttribute="leading" secondItem="Dwu-4y-T2D" secondAttribute="leading" id="nSh-Fr-32R"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Dwu-4y-T2D" secondAttribute="trailing" id="0Y6-u9-iah"/>
+                            <constraint firstItem="Dwu-4y-T2D" firstAttribute="bottom" secondItem="kfU-8D-ULQ" secondAttribute="top" id="b1a-wC-Pgm"/>
+                            <constraint firstItem="Dwu-4y-T2D" firstAttribute="top" secondItem="8Aa-Dj-TsN" secondAttribute="top" id="eyB-VL-gad"/>
+                            <constraint firstItem="Dwu-4y-T2D" firstAttribute="leading" secondItem="8Aa-Dj-TsN" secondAttribute="leading" id="yxS-R5-ZtV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="e1F-qD-bTl"/>
+                    <connections>
+                        <outlet property="imageScrollView" destination="Dwu-4y-T2D" id="dcP-a8-9d4"/>
+                        <outlet property="podImageView" destination="txA-vz-0pQ" id="Nzo-xO-p10"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n5C-2q-lbm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="561" y="507"/>
+        </scene>
+        <!--NASA APOD-->
+        <scene sceneID="t82-ZD-6BK">
+            <objects>
+                <navigationController title="NASA APOD" automaticallyAdjustsScrollViewInsets="NO" id="bZy-vP-rrj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x8K-ov-E2w">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="aWU-zx-CkI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gE9-xF-l5k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-366" y="-266"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Iao-h0-oCA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FQS-1u-oaT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RBx-cA-gGi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1Mb-cQ-PFN" kind="relationship" relationship="rootViewController" id="GFz-mw-fzV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oIb-Nq-gij" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-367" y="507"/>
         </scene>
     </scenes>
 </document>
