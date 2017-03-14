@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  NASAPOD
 //
-//  Created by Tom Lawrence on 3/13/17.
+//  Created by Joy Kendall on 3/13/17.
 //  Copyright © 2017 Joy. All rights reserved.
 //
 
