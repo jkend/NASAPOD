@@ -22,7 +22,7 @@
             </objects>
             <point key="canvasLocation" x="-1409" y="24"/>
         </scene>
-        <!--Main View Controller-->
+        <!--NASA APOD-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="NASAPOD" customModuleProvider="target" sceneMemberID="viewController">
@@ -82,9 +82,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="LqV-j7-6Lf"/>
+                    <navigationItem key="navigationItem" title="NASA APOD" id="LqV-j7-6Lf"/>
                     <connections>
                         <outlet property="datePicker" destination="iah-La-FsF" id="3XO-vA-V76"/>
+                        <segue destination="1Mb-cQ-PFN" kind="show" identifier="Show APOD" id="OBg-o4-kP4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -136,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n5C-2q-lbm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="561" y="507"/>
+            <point key="canvasLocation" x="561" y="450"/>
         </scene>
         <!--NASA APOD-->
         <scene sceneID="t82-ZD-6BK">
@@ -175,4 +176,7 @@
             <point key="canvasLocation" x="-367" y="507"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="OBg-o4-kP4"/>
+    </inferredMetricsTieBreakers>
 </document>

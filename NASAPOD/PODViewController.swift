@@ -13,6 +13,8 @@ class PODViewController: UIViewController {
     @IBOutlet weak var imageScrollView: UIScrollView!
 
     @IBOutlet weak var podImageView: UIImageView!
+    var imageURL: String?
+    var imageTitle: String?
 
 }
 
