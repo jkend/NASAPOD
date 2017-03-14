@@ -33,7 +33,9 @@ class MainViewController: UIViewController, UISplitViewControllerDelegate {
     @IBAction func getTodaysPOD(_ sender: UIButton) {
         apodFetcher.getTodaysPOD() { [weak weakself = self] (apod: APOD) -> Void  in
             weakself?.chosenApod = apod
-            weakself?.setupAPOD()
+            DispatchQueue.main.async {
+                weakself?.setupAPOD()
+            }
         }
     }
     
@@ -41,7 +43,9 @@ class MainViewController: UIViewController, UISplitViewControllerDelegate {
         let chosenDate = datePicker.date
         apodFetcher.getPastPOD(fromDate: chosenDate) { [weak weakself = self] (apod: APOD) -> Void  in
             weakself?.chosenApod = apod
-            weakself?.setupAPOD()
+            DispatchQueue.main.async {
+                weakself?.setupAPOD()
+            }
         }
     }
 
