@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2750EF91E78445C00D786C4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2750EF81E78445C00D786C4 /* MainViewController.swift */; };
+		E2750EFB1E784FF900D786C4 /* APOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2750EFA1E784FF900D786C4 /* APOD.swift */; };
 		E295CC4B1E7708B8009B6945 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E295CC4A1E7708B8009B6945 /* AppDelegate.swift */; };
-		E295CC4D1E7708B8009B6945 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E295CC4C1E7708B8009B6945 /* ViewController.swift */; };
+		E295CC4D1E7708B8009B6945 /* PODViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E295CC4C1E7708B8009B6945 /* PODViewController.swift */; };
 		E295CC501E7708B8009B6945 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E295CC4E1E7708B8009B6945 /* Main.storyboard */; };
 		E295CC521E7708B8009B6945 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E295CC511E7708B8009B6945 /* Assets.xcassets */; };
 		E295CC551E7708B8009B6945 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E295CC531E7708B8009B6945 /* LaunchScreen.storyboard */; };
+		E295CC5E1E770CDF009B6945 /* APODFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E295CC5D1E770CDF009B6945 /* APODFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E2750EF81E78445C00D786C4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E2750EFA1E784FF900D786C4 /* APOD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APOD.swift; sourceTree = "<group>"; };
 		E295CC471E7708B8009B6945 /* NASAPOD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASAPOD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E295CC4A1E7708B8009B6945 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E295CC4C1E7708B8009B6945 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E295CC4C1E7708B8009B6945 /* PODViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PODViewController.swift; sourceTree = "<group>"; };
 		E295CC4F1E7708B8009B6945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E295CC511E7708B8009B6945 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E295CC541E7708B8009B6945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E295CC561E7708B8009B6945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E295CC5D1E770CDF009B6945 /* APODFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APODFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,25 @@
 		E295CC491E7708B8009B6945 /* NASAPOD */ = {
 			isa = PBXGroup;
 			children = (
-				E295CC4A1E7708B8009B6945 /* AppDelegate.swift */,
-				E295CC4C1E7708B8009B6945 /* ViewController.swift */,
+				E295CC5C1E7708F4009B6945 /* Supporting Files */,
+				E295CC4C1E7708B8009B6945 /* PODViewController.swift */,
+				E2750EF81E78445C00D786C4 /* MainViewController.swift */,
 				E295CC4E1E7708B8009B6945 /* Main.storyboard */,
+				E295CC5D1E770CDF009B6945 /* APODFetcher.swift */,
+				E2750EFA1E784FF900D786C4 /* APOD.swift */,
 				E295CC511E7708B8009B6945 /* Assets.xcassets */,
+			);
+			path = NASAPOD;
+			sourceTree = "<group>";
+		};
+		E295CC5C1E7708F4009B6945 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E295CC4A1E7708B8009B6945 /* AppDelegate.swift */,
 				E295CC531E7708B8009B6945 /* LaunchScreen.storyboard */,
 				E295CC561E7708B8009B6945 /* Info.plist */,
 			);
-			path = NASAPOD;
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +153,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E295CC4D1E7708B8009B6945 /* ViewController.swift in Sources */,
+				E295CC4D1E7708B8009B6945 /* PODViewController.swift in Sources */,
+				E295CC5E1E770CDF009B6945 /* APODFetcher.swift in Sources */,
 				E295CC4B1E7708B8009B6945 /* AppDelegate.swift in Sources */,
+				E2750EFB1E784FF900D786C4 /* APOD.swift in Sources */,
+				E2750EF91E78445C00D786C4 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +319,7 @@
 				E295CC5B1E7708B8009B6945 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
