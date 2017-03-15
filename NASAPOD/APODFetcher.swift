@@ -57,7 +57,6 @@ class APODFetcher {
                 apodResponse.title = apodData["title"] as! String?
                 apodResponse.detailText = apodData["explanation"] as! String?
                 apodResponse.imageURL = apodData["url"] as! String?
-                print(apodData)
                 completionHandler(apodResponse)
             } catch  {
                 print("error trying to convert data to JSON")
