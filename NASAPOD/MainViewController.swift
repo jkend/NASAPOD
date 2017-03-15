@@ -68,8 +68,9 @@ class MainViewController: UIViewController, UISplitViewControllerDelegate {
      
      private func setupAPOD() {
         if let apodvc = self.splitViewController?.viewControllers.last?.contentViewController as? PODViewController {
-            apodvc.imageURL = chosenApod?.imageURL
-            apodvc.imageTitle = chosenApod?.title
+            //apodvc.imageURL = chosenApod?.imageURL
+            //apodvc.imageTitle = chosenApod?.title
+            apodvc.currentAPOD = chosenApod
         }
         else {
             performSegue(withIdentifier: Storyboard.ShowAPODSegue, sender: nil)
@@ -79,8 +80,9 @@ class MainViewController: UIViewController, UISplitViewControllerDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Storyboard.ShowAPODSegue {
             if let apodvc = segue.destination.contentViewController as? PODViewController {
-                apodvc.imageURL = chosenApod?.imageURL
-                apodvc.imageTitle = chosenApod?.title
+                //apodvc.imageURL = chosenApod?.imageURL
+                //apodvc.imageTitle = chosenApod?.title
+                apodvc.currentAPOD = chosenApod
             }
         }
     }
