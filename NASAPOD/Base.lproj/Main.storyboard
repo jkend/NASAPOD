@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Mjv-NW-cfb">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,12 +33,19 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="iah-La-FsF">
-                                <rect key="frame" x="0.0" y="318" width="375" height="180"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cE9-Fj-Lmk">
+                                <rect key="frame" x="113.66666666666669" y="233" width="187" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="See today's POD"/>
+                                <connections>
+                                    <action selector="getTodaysPOD:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mNa-3r-BdU"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="iah-La-FsF">
+                                <rect key="frame" x="47" y="315" width="320" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="511129724.20105499">
                                     <!--2017-03-13 20:28:44 +0000-->
                                 </date>
@@ -47,40 +56,60 @@
                                     <!--2037-11-30 11:00:00 +0000-->
                                 </date>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cE9-Fj-Lmk">
-                                <rect key="frame" x="93" y="205" width="188" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="See today's POD"/>
-                                <connections>
-                                    <action selector="getTodaysPOD:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mNa-3r-BdU"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Or choose a past image:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31s-sc-UjO">
-                                <rect key="frame" x="58" y="275" width="259" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NASA's Astronomy Pictore of the Day goes back to 1995!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMS-hl-sXJ">
-                                <rect key="frame" x="24" y="118" width="335" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ut-ld-STJ">
-                                <rect key="frame" x="164" y="522" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ut-ld-STJ">
+                                <rect key="frame" x="189.66666666666666" y="585" width="35" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="OK"/>
                                 <connections>
                                     <action selector="getPODFromDate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I8h-H4-lqa"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="225" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="w3c-6l-rOg">
+                                <rect key="frame" x="20" y="121" width="374" height="104"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text"> Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer.</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or choose a past image:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31s-sc-UjO">
+                                <rect key="frame" x="20" y="283" width="227" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Astronomy Picture of the Day" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNU-Jn-bAc">
+                                <rect key="frame" x="56.666666666666657" y="72" width="301" height="27"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="NASA's APOD archives go back to 1995!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sFE-Fs-8Vu">
+                                <rect key="frame" x="20" y="539" width="374" height="38"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sFE-Fs-8Vu" firstAttribute="top" secondItem="iah-La-FsF" secondAttribute="bottom" constant="8" symbolic="YES" id="4gw-2C-Ni4"/>
+                            <constraint firstItem="6ut-ld-STJ" firstAttribute="top" secondItem="sFE-Fs-8Vu" secondAttribute="bottom" constant="8" symbolic="YES" id="4q7-OJ-eyN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="w3c-6l-rOg" secondAttribute="trailing" id="Ata-EI-QaX"/>
+                            <constraint firstItem="6ut-ld-STJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BMv-mH-hZ5"/>
+                            <constraint firstItem="cE9-Fj-Lmk" firstAttribute="top" secondItem="w3c-6l-rOg" secondAttribute="bottom" constant="8" symbolic="YES" id="CWX-WP-ojh"/>
+                            <constraint firstItem="NNU-Jn-bAc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cmp-nI-kI9"/>
+                            <constraint firstItem="cE9-Fj-Lmk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E66-wl-h4z"/>
+                            <constraint firstItem="iah-La-FsF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MHu-UZ-41J"/>
+                            <constraint firstItem="w3c-6l-rOg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NY8-7D-1qF"/>
+                            <constraint firstItem="iah-La-FsF" firstAttribute="top" secondItem="31s-sc-UjO" secondAttribute="bottom" constant="8" symbolic="YES" id="OPP-Fj-vU6"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="w3c-6l-rOg" secondAttribute="leading" id="aYB-V1-D6r"/>
+                            <constraint firstItem="NNU-Jn-bAc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="axJ-hD-niD"/>
+                            <constraint firstItem="31s-sc-UjO" firstAttribute="top" secondItem="cE9-Fj-Lmk" secondAttribute="bottom" constant="8" symbolic="YES" id="ayj-2a-5Ni"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="sFE-Fs-8Vu" secondAttribute="leading" id="b1n-aD-twm"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="31s-sc-UjO" secondAttribute="leading" id="f77-eD-5nx"/>
+                            <constraint firstItem="w3c-6l-rOg" firstAttribute="top" secondItem="NNU-Jn-bAc" secondAttribute="bottom" multiplier="0.1" constant="111.09999999999999" id="s6G-pk-Of5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sFE-Fs-8Vu" secondAttribute="trailing" id="za7-UM-vsh"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="NASA APOD" id="LqV-j7-6Lf"/>
                     <connections>
@@ -90,7 +119,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="561" y="-266"/>
+            <point key="canvasLocation" x="559.20000000000005" y="-267.61619190404798"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="eWR-5j-bTd">
@@ -101,11 +130,11 @@
                         <viewControllerLayoutGuide type="bottom" id="kfU-8D-ULQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8Aa-Dj-TsN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dwu-4y-T2D">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
