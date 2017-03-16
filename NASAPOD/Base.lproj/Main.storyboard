@@ -144,37 +144,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vbI-db-XhC">
-                                <rect key="frame" x="0.0" y="364" width="414" height="332"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="More" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQa-GD-h8y">
-                                        <rect key="frame" x="8" y="0.0" width="39.333333333333336" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="naF-C4-d17">
-                                        <rect key="frame" x="0.0" y="29" width="414" height="295"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="wWE-h3-7iw">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="295"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        </view>
-                                        <blurEffect style="light"/>
-                                    </visualEffectView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.59999999999999998" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NSA-6r-qzM">
-                                        <rect key="frame" x="0.0" y="29" width="414" height="295"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TgE-0S-ihA" customClass="DetailView" customModule="NASAPOD" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="217" width="414" height="301"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="gXx-N3-Jdn" appends="YES" id="ryx-hj-LtC"/>
+                                    <outletCollection property="gestureRecognizers" destination="a6h-4P-0JO" appends="YES" id="iaP-Y4-GbS"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -182,9 +157,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="e1F-qD-bTl"/>
                     <connections>
-                        <outlet property="detailMoreLabel" destination="YQa-GD-h8y" id="A1H-Xg-iDa"/>
-                        <outlet property="detailTextView" destination="NSA-6r-qzM" id="lJq-6V-6Kf"/>
-                        <outlet property="detailView" destination="vbI-db-XhC" id="5Ce-eO-a02"/>
+                        <outlet property="detailView" destination="TgE-0S-ihA" id="rWH-Ad-RYw"/>
                         <outlet property="imageScrollView" destination="Dwu-4y-T2D" id="dcP-a8-9d4"/>
                         <outlet property="imageTitleLabel" destination="a12-ly-cc4" id="JQY-MM-z5n"/>
                     </connections>
@@ -211,9 +184,9 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <tapGestureRecognizer id="gXx-N3-Jdn">
+                <tapGestureRecognizer id="a6h-4P-0JO">
                     <connections>
-                        <action selector="toggleDetailView:" destination="1Mb-cQ-PFN" id="vKG-4F-zSQ"/>
+                        <action selector="toggleDetailView:" destination="1Mb-cQ-PFN" id="Jys-nZ-0io"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
