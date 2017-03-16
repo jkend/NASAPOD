@@ -15,6 +15,8 @@
 		E295CC521E7708B8009B6945 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E295CC511E7708B8009B6945 /* Assets.xcassets */; };
 		E295CC551E7708B8009B6945 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E295CC531E7708B8009B6945 /* LaunchScreen.storyboard */; };
 		E295CC5E1E770CDF009B6945 /* APODFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E295CC5D1E770CDF009B6945 /* APODFetcher.swift */; };
+		E2AD64201E7B080700ABB7EF /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2AD641F1E7B080700ABB7EF /* DetailView.xib */; };
+		E2AD64221E7B0A2000ABB7EF /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AD64211E7B0A2000ABB7EF /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		E295CC541E7708B8009B6945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E295CC561E7708B8009B6945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E295CC5D1E770CDF009B6945 /* APODFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APODFetcher.swift; sourceTree = "<group>"; };
+		E2AD641F1E7B080700ABB7EF /* DetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailView.xib; path = DetailView/DetailView.xib; sourceTree = "<group>"; };
+		E2AD64211E7B0A2000ABB7EF /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailView.swift; path = DetailView/DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 			children = (
 				E295CC5C1E7708F4009B6945 /* Supporting Files */,
 				E295CC4C1E7708B8009B6945 /* PODViewController.swift */,
+				E2AD64231E7B0A2700ABB7EF /* DetailView */,
 				E2750EF81E78445C00D786C4 /* MainViewController.swift */,
 				E295CC4E1E7708B8009B6945 /* Main.storyboard */,
 				E295CC5D1E770CDF009B6945 /* APODFetcher.swift */,
@@ -79,6 +84,15 @@
 				E295CC561E7708B8009B6945 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E2AD64231E7B0A2700ABB7EF /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				E2AD641F1E7B080700ABB7EF /* DetailView.xib */,
+				E2AD64211E7B0A2000ABB7EF /* DetailView.swift */,
+			);
+			name = DetailView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E295CC551E7708B8009B6945 /* LaunchScreen.storyboard in Resources */,
+				E2AD64201E7B080700ABB7EF /* DetailView.xib in Resources */,
 				E295CC521E7708B8009B6945 /* Assets.xcassets in Resources */,
 				E295CC501E7708B8009B6945 /* Main.storyboard in Resources */,
 			);
@@ -154,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E295CC4D1E7708B8009B6945 /* PODViewController.swift in Sources */,
+				E2AD64221E7B0A2000ABB7EF /* DetailView.swift in Sources */,
 				E295CC5E1E770CDF009B6945 /* APODFetcher.swift in Sources */,
 				E295CC4B1E7708B8009B6945 /* AppDelegate.swift in Sources */,
 				E2750EFB1E784FF900D786C4 /* APOD.swift in Sources */,
