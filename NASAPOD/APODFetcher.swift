@@ -21,6 +21,12 @@ class APODFetcher {
         static let BaseUrl: String = "https://api.nasa.gov/planetary/apod?api_key="
     }
     
+    private struct ErrorMessages {
+        static let NoData: String = "We were unable to download the APOD for this date."
+        static let UnexpectedFormat: String = "The APOD from this date is in a format we aren't expecting!"
+        static let NoImage: String = "It seems that this day's APOD isn't on NASA's server at the moment."
+    }
+    
     func getTodaysPOD(completion:@escaping (APOD) -> Void) {
         let url = String(format: "%@%@", Constants.BaseUrl, Constants.ApiKey)
         getPODJson(url, completionHandler: completion)
@@ -42,24 +48,35 @@ class APODFetcher {
         let task = session.dataTask(with: urlRequest) { (data, response, error) in
             
             if let error = error {
-                print(error)
+                apodResponse.errorMessage = error.localizedDescription
+                completionHandler(apodResponse)
+                return
+                
             }
             guard let responseData = data else {
-                print("Error: No data")
+                apodResponse.errorMessage = ErrorMessages.NoData
+                completionHandler(apodResponse)
                 return
             }
             do {
                 guard let apodData = try JSONSerialization.jsonObject(with: responseData, options: [])
                     as? [String: Any] else {
-                        print("error trying to convert data to JSON")
+                        apodResponse.errorMessage = ErrorMessages.UnexpectedFormat
+                        completionHandler(apodResponse)
                         return
+                }
+                if apodData["code"] != nil {
+                    apodResponse.errorMessage = ErrorMessages.NoImage
+                    completionHandler(apodResponse)
+                    return
                 }
                 apodResponse.title = apodData["title"] as! String?
                 apodResponse.detailText = apodData["explanation"] as! String?
                 apodResponse.imageURL = apodData["url"] as! String?
                 completionHandler(apodResponse)
             } catch  {
-                print("error trying to convert data to JSON")
+                apodResponse.errorMessage = ErrorMessages.UnexpectedFormat
+                completionHandler(apodResponse)
                 return
             }
         }

@@ -18,6 +18,11 @@ class MainViewController: UIViewController, UISplitViewControllerDelegate {
         static let ShowAPODSegue = "Show APOD"
     }
     
+    private struct StringConstants {
+        static let GeneralErrorMessage: String = "We can't show you that one."
+    }
+    
+    
     // MARK: VC Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,9 +72,11 @@ class MainViewController: UIViewController, UISplitViewControllerDelegate {
     // MARK: - Navigation
      
      private func setupAPOD() {
+        if let errMsg = chosenApod?.errorMessage  {
+            showError(errMsg)
+            return
+        }
         if let apodvc = self.splitViewController?.viewControllers.last?.contentViewController as? PODViewController {
-            //apodvc.imageURL = chosenApod?.imageURL
-            //apodvc.imageTitle = chosenApod?.title
             apodvc.currentAPOD = chosenApod
         }
         else {
@@ -80,11 +87,17 @@ class MainViewController: UIViewController, UISplitViewControllerDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Storyboard.ShowAPODSegue {
             if let apodvc = segue.destination.contentViewController as? PODViewController {
-                //apodvc.imageURL = chosenApod?.imageURL
-                //apodvc.imageTitle = chosenApod?.title
                 apodvc.currentAPOD = chosenApod
             }
         }
+    }
+    
+    private func showError(_ errorMessage: String) {
+        let fullErrorText = "\(StringConstants.GeneralErrorMessage)\n\n\(errorMessage)"
+        let errorPopup = UIAlertController(title: "Darn", message: fullErrorText, preferredStyle: .alert)
+        errorPopup.addAction(UIAlertAction(title: "OK", style: .default) { action in
+        })
+        self.present(errorPopup, animated: true, completion: nil)
     }
 }
 
