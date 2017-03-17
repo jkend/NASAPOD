@@ -70,6 +70,9 @@ class PODViewController: UIViewController, UIScrollViewDelegate {
     }
     
     private func setUIElements() {
+        if currentAPOD == nil {
+            return
+        }
         detailView?.detailText = currentAPOD.detailText!
         imageTitleLabel?.text = currentAPOD.title!
         imageTitleLabel?.sizeToFit()
