@@ -35,7 +35,6 @@ class APODFetcher {
     func getPastPOD(fromDate: Date, completionHandler completion:@escaping (APOD) -> Void) {
         let dateString = dateFormatter.string(from: fromDate)
         let url = String(format: "%@%@&date=%@", Constants.BaseUrl, Constants.ApiKey, dateString)
-        print(url)
         getPODJson(url, completionHandler: completion)
   
     }
@@ -50,8 +49,7 @@ class APODFetcher {
             if let error = error {
                 apodResponse.errorMessage = error.localizedDescription
                 completionHandler(apodResponse)
-                return
-                
+                return                
             }
             guard let responseData = data else {
                 apodResponse.errorMessage = ErrorMessages.NoData
@@ -73,6 +71,7 @@ class APODFetcher {
                 apodResponse.title = apodData["title"] as! String?
                 apodResponse.detailText = apodData["explanation"] as! String?
                 apodResponse.imageURL = apodData["url"] as! String?
+                apodResponse.dateString = apodData["date"] as! String?
                 completionHandler(apodResponse)
             } catch  {
                 apodResponse.errorMessage = ErrorMessages.UnexpectedFormat

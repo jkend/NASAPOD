@@ -15,5 +15,5 @@ class APOD {
     var hdImageURL: String?
     var author: String?
     var errorMessage: String?
-    
+    var dateString: String?
 }
