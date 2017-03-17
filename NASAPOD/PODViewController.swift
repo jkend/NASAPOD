@@ -73,10 +73,10 @@ class PODViewController: UIViewController, UIScrollViewDelegate {
         if currentAPOD == nil {
             return
         }
-        detailView?.detailText = currentAPOD.detailText!
-        imageTitleLabel?.text = currentAPOD.title!
+        detailView?.detailText = currentAPOD.detailText ?? " "
+        imageTitleLabel?.text = currentAPOD.title ?? " "
         imageTitleLabel?.sizeToFit()
-
+        self.title = currentAPOD.dateString ?? "APOD"
         hideDetailView()
     }
     
@@ -84,30 +84,35 @@ class PODViewController: UIViewController, UIScrollViewDelegate {
     @IBAction func toggleDetailView(_ sender: UITapGestureRecognizer) {
         if sender.state == .ended {
             print(detailView.frame.height)
-            if detailViewShowing {
-                UIView.animate(withDuration: 0.25, delay: 0.0, options: [], animations: {
+            //if detailViewShowing {
+            if !detailView.minimized {
+            /*    UIView.animate(withDuration: 0.25, delay: 0.0, options: [], animations: {
                     self.detailView.frame.origin.y = self.view.frame.height - 20
                 }, completion: { (finished: Bool) in
                     self.detailViewShowing = false
                     self.detailView.tabText = "More"
                 })
+ */
+                detailView.hide()
             }
             else {
-                UIView.animate(withDuration: 0.25, delay: 0.0, options: [], animations: {
+              /*  UIView.animate(withDuration: 0.25, delay: 0.0, options: [], animations: {
                     self.detailView.frame.origin.y = self.view.frame.height - self.detailView.frame.height
                 }, completion: { (finished: Bool) in
                     self.detailViewShowing = true
                     self.detailView.tabText = "Hide"
                 })
-
+            */
+                detailView.show()
             }
         }
     }
     
     private func hideDetailView() {
-        detailView?.frame.origin.y = view.frame.height - 20
-        detailView?.tabText = "More"
-        detailViewShowing = false
+      //  detailView?.frame.origin.y = view.frame.height - 20
+      //  detailView?.tabText = "More"
+      //  detailViewShowing = false
+        detailView.hide()
     }
     
     
