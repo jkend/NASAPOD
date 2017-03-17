@@ -23,37 +23,38 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lx9-pm-219">
-                    <rect key="frame" x="20" y="20" width="54.5" height="29"/>
+                    <rect key="frame" x="4" y="4" width="54.5" height="29"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vb6-jv-nQl">
-                    <rect key="frame" x="0.0" y="57" width="375" height="328"/>
+                    <rect key="frame" x="0.0" y="41" width="375" height="344"/>
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="TaJ-aN-mTB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="328"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="344"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
                     <blurEffect style="light"/>
                 </visualEffectView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="R8L-uH-PKR">
-                    <rect key="frame" x="0.0" y="57" width="375" height="328"/>
+                    <rect key="frame" x="0.0" y="41" width="375" height="344"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
             </subviews>
+            <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="R8L-uH-PKR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5cu-wS-BC2"/>
+                <constraint firstItem="Lx9-pm-219" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="4" id="Dv1-5m-f4I"/>
                 <constraint firstAttribute="bottom" secondItem="R8L-uH-PKR" secondAttribute="bottom" id="JBq-6E-JDR"/>
+                <constraint firstItem="Lx9-pm-219" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="NgX-uN-w0i"/>
                 <constraint firstAttribute="trailing" secondItem="Vb6-jv-nQl" secondAttribute="trailing" id="RHc-oG-zwP"/>
                 <constraint firstItem="R8L-uH-PKR" firstAttribute="height" secondItem="Vb6-jv-nQl" secondAttribute="height" id="XE0-52-hTd"/>
                 <constraint firstAttribute="trailing" secondItem="R8L-uH-PKR" secondAttribute="trailing" id="ZH1-Ck-KE0"/>
                 <constraint firstItem="R8L-uH-PKR" firstAttribute="bottom" secondItem="Vb6-jv-nQl" secondAttribute="bottom" id="Zzo-6V-C2Q"/>
                 <constraint firstItem="R8L-uH-PKR" firstAttribute="width" secondItem="Vb6-jv-nQl" secondAttribute="width" id="aeS-Bf-F5N"/>
-                <constraint firstItem="R8L-uH-PKR" firstAttribute="top" secondItem="Lx9-pm-219" secondAttribute="bottom" constant="8" symbolic="YES" id="crd-oY-t43"/>
-                <constraint firstItem="Lx9-pm-219" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" symbolic="YES" id="g7e-PO-nyW"/>
-                <constraint firstItem="Lx9-pm-219" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="jrr-sh-eW6"/>
+                <constraint firstItem="R8L-uH-PKR" firstAttribute="top" secondItem="Lx9-pm-219" secondAttribute="bottom" constant="8" symbolic="YES" id="hak-eS-uIM"/>
                 <constraint firstItem="R8L-uH-PKR" firstAttribute="top" secondItem="Vb6-jv-nQl" secondAttribute="top" id="qAG-ML-3FJ"/>
                 <constraint firstItem="R8L-uH-PKR" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="wqO-TM-LgZ"/>
                 <constraint firstItem="Vb6-jv-nQl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yaL-eg-Ije"/>
