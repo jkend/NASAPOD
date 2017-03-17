@@ -9,15 +9,17 @@
 import UIKit
 
 class MainViewController: UIViewController, UISplitViewControllerDelegate {
-
+    // MARK: Instance variables
     private let apodFetcher = APODFetcher()
     private var chosenApod: APOD?
     
+    // MARK: Outlets
     @IBOutlet weak var datePicker: UIDatePicker!
  
     @IBOutlet weak var todaysLoadingSpinner: UIActivityIndicatorView!
     @IBOutlet weak var pastLoadingSpinner: UIActivityIndicatorView!
     
+    // MARK: Constants
     private struct Storyboard {
         static let ShowAPODSegue = "Show APOD"
     }
@@ -100,6 +102,7 @@ class MainViewController: UIViewController, UISplitViewControllerDelegate {
         }
     }
     
+    // MARK: Showing errors
     private func showError(_ errorMessage: String) {
         let fullErrorText = "\(StringConstants.GeneralErrorMessage)\n\n\(errorMessage)"
         let errorPopup = UIAlertController(title: "Darn", message: fullErrorText, preferredStyle: .alert)
