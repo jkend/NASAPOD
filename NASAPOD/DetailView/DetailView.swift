@@ -18,6 +18,8 @@ class DetailView: UIView {
     
     @IBOutlet var topView: UIView!
     
+    var minimized = true
+    
     var tabText: String? {
         didSet {
             moreLabel?.text = tabText
@@ -42,8 +44,8 @@ class DetailView: UIView {
         }
         textView.sizeToFit()
         let textFrame = textView.frame
-        //blurEffect?.contentView.frame = textFrame
-        return CGSize(width: textFrame.width, height: textFrame.height + moreLabel.frame.height + 10)
+        // TODO that constant is silly, use constraint vertical values maybe?
+        return CGSize(width: textFrame.width, height: textFrame.height + moreLabel.frame.height + 20)
     }
     
     // MARK: init/load from nib
@@ -57,7 +59,7 @@ class DetailView: UIView {
         xibSetup()
     }
     
-    func xibSetup() {
+    private func xibSetup() {
         topView = loadViewFromNib()
         
         // use bounds not frame or it'll be offset
@@ -69,12 +71,36 @@ class DetailView: UIView {
         addSubview(topView)
     }
     
-    func loadViewFromNib() -> UIView {
+    private func loadViewFromNib() -> UIView {
         
         let bundle = Bundle(for: DetailView.self)
         let nib = UINib(nibName: "DetailView", bundle: bundle)
         let view = nib.instantiate(withOwner:self, options: nil)[0] as! UIView
         
         return view
+    }
+    
+    func show() {
+        guard let parentView = superview else {
+            return
+        }
+        UIView.animate(withDuration: 0.25, delay: 0.0, options: [], animations: {
+            self.frame.origin.y = parentView.frame.height - self.frame.height
+        }, completion: { (finished: Bool) in
+            self.minimized = false
+            self.moreLabel.text = "Hide"
+        })
+    }
+    
+    func hide() {
+        guard let parentView = superview else {
+            return
+        }
+        UIView.animate(withDuration: 0.25, delay: 0.0, options: [], animations: {
+            self.frame.origin.y = parentView.frame.height - self.moreLabel.frame.height
+        }, completion: { (finished: Bool) in
+            self.minimized = true
+            self.moreLabel.text = "More"
+        })
     }
 }
