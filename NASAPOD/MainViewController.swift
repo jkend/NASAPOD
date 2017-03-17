@@ -11,8 +11,12 @@ import UIKit
 class MainViewController: UIViewController, UISplitViewControllerDelegate {
 
     private let apodFetcher = APODFetcher()
-    @IBOutlet weak var datePicker: UIDatePicker!
     private var chosenApod: APOD?
+    
+    @IBOutlet weak var datePicker: UIDatePicker!
+ 
+    @IBOutlet weak var todaysLoadingSpinner: UIActivityIndicatorView!
+    @IBOutlet weak var pastLoadingSpinner: UIActivityIndicatorView!
     
     private struct Storyboard {
         static let ShowAPODSegue = "Show APOD"
@@ -36,9 +40,11 @@ class MainViewController: UIViewController, UISplitViewControllerDelegate {
     
     // MARK: Actions
     @IBAction func getTodaysPOD(_ sender: UIButton) {
+        todaysLoadingSpinner.startAnimating()
         apodFetcher.getTodaysPOD() { [weak weakself = self] (apod: APOD) -> Void  in
             weakself?.chosenApod = apod
             DispatchQueue.main.async {
+                weakself?.todaysLoadingSpinner.stopAnimating()
                 weakself?.setupAPOD()
             }
         }
@@ -46,9 +52,11 @@ class MainViewController: UIViewController, UISplitViewControllerDelegate {
     
     @IBAction func getPODFromDate(_ sender: UIButton) {
         let chosenDate = datePicker.date
+        pastLoadingSpinner.startAnimating()
         apodFetcher.getPastPOD(fromDate: chosenDate) { [weak weakself = self] (apod: APOD) -> Void  in
             weakself?.chosenApod = apod
             DispatchQueue.main.async {
+                weakself?.pastLoadingSpinner.stopAnimating()
                 weakself?.setupAPOD()
             }
         }

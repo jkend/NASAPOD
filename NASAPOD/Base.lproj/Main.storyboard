@@ -93,6 +93,14 @@
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ixL-hs-aG8" userLabel="Todays Loading Spinner">
+                                                <rect key="frame" x="309" y="156" width="20" height="20"/>
+                                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </activityIndicatorView>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="1ba-t4-fXV">
+                                                <rect key="frame" x="233" y="464" width="20" height="20"/>
+                                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -101,16 +109,20 @@
                                             <constraint firstItem="w3c-6l-rOg" firstAttribute="top" secondItem="NNU-Jn-bAc" secondAttribute="bottom" constant="8" symbolic="YES" id="HQL-Fx-EFB"/>
                                             <constraint firstItem="w3c-6l-rOg" firstAttribute="centerX" secondItem="mH6-XY-OhR" secondAttribute="centerX" id="Hfr-yi-aba"/>
                                             <constraint firstItem="31s-sc-UjO" firstAttribute="leading" secondItem="mH6-XY-OhR" secondAttribute="leading" constant="20" symbolic="YES" id="IAU-qc-HPC"/>
+                                            <constraint firstItem="ixL-hs-aG8" firstAttribute="top" secondItem="w3c-6l-rOg" secondAttribute="bottom" constant="19" id="KLE-dc-deu"/>
                                             <constraint firstItem="sFE-Fs-8Vu" firstAttribute="centerX" secondItem="6ut-ld-STJ" secondAttribute="centerX" id="Ldq-Zq-oWv"/>
                                             <constraint firstItem="sFE-Fs-8Vu" firstAttribute="top" secondItem="iah-La-FsF" secondAttribute="bottom" constant="8" symbolic="YES" id="Os3-vq-FZt"/>
                                             <constraint firstItem="NNU-Jn-bAc" firstAttribute="top" secondItem="mH6-XY-OhR" secondAttribute="top" constant="20" symbolic="YES" id="PEx-rg-6zz"/>
+                                            <constraint firstItem="1ba-t4-fXV" firstAttribute="leading" secondItem="6ut-ld-STJ" secondAttribute="trailing" constant="8" symbolic="YES" id="QRy-ch-HGJ"/>
                                             <constraint firstItem="NNU-Jn-bAc" firstAttribute="centerX" secondItem="mH6-XY-OhR" secondAttribute="centerX" id="YUg-9N-vWM"/>
                                             <constraint firstItem="iah-La-FsF" firstAttribute="top" secondItem="31s-sc-UjO" secondAttribute="bottom" constant="8" symbolic="YES" id="ciX-Cb-O4X"/>
                                             <constraint firstAttribute="trailing" secondItem="w3c-6l-rOg" secondAttribute="trailing" constant="8" id="dYF-V9-vfB"/>
                                             <constraint firstItem="sFE-Fs-8Vu" firstAttribute="top" secondItem="mH6-XY-OhR" secondAttribute="top" constant="407" id="epI-yN-8Qi"/>
                                             <constraint firstItem="iah-La-FsF" firstAttribute="centerX" secondItem="mH6-XY-OhR" secondAttribute="centerX" id="gnd-tP-eiy"/>
                                             <constraint firstItem="6ut-ld-STJ" firstAttribute="centerX" secondItem="mH6-XY-OhR" secondAttribute="centerX" id="gwW-5o-Otk"/>
+                                            <constraint firstItem="1ba-t4-fXV" firstAttribute="top" secondItem="sFE-Fs-8Vu" secondAttribute="bottom" constant="19" id="hHj-gE-xaD"/>
                                             <constraint firstAttribute="bottom" secondItem="6ut-ld-STJ" secondAttribute="bottom" constant="20" symbolic="YES" id="kgu-xG-YOF"/>
+                                            <constraint firstItem="ixL-hs-aG8" firstAttribute="leading" secondItem="cE9-Fj-Lmk" secondAttribute="trailing" constant="8" symbolic="YES" id="lbJ-fF-kng"/>
                                             <constraint firstItem="w3c-6l-rOg" firstAttribute="leading" secondItem="mH6-XY-OhR" secondAttribute="leading" constant="8" id="u8r-pU-6wE"/>
                                             <constraint firstItem="6ut-ld-STJ" firstAttribute="top" secondItem="sFE-Fs-8Vu" secondAttribute="bottom" constant="8" symbolic="YES" id="xHO-Jj-9Nt"/>
                                             <constraint firstItem="31s-sc-UjO" firstAttribute="top" secondItem="cE9-Fj-Lmk" secondAttribute="bottom" constant="8" symbolic="YES" id="zQO-eC-92Q"/>
@@ -139,6 +151,8 @@
                     <navigationItem key="navigationItem" title="NASA APOD" id="LqV-j7-6Lf"/>
                     <connections>
                         <outlet property="datePicker" destination="iah-La-FsF" id="3XO-vA-V76"/>
+                        <outlet property="pastLoadingSpinner" destination="1ba-t4-fXV" id="sQH-Ny-ajx"/>
+                        <outlet property="todaysLoadingSpinner" destination="ixL-hs-aG8" id="ITe-xd-JvA"/>
                         <segue destination="1Mb-cQ-PFN" kind="show" identifier="Show APOD" id="OBg-o4-kP4"/>
                     </connections>
                 </viewController>
@@ -162,7 +176,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </scrollView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a12-ly-cc4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a12-ly-cc4">
                                 <rect key="frame" x="20" y="72" width="55" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
