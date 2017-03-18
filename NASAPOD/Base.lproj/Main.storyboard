@@ -172,20 +172,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dwu-4y-T2D">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dwu-4y-T2D">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </scrollView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a12-ly-cc4">
-                                <rect key="frame" x="20" y="72" width="55" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a12-ly-cc4">
+                                <rect key="frame" x="2.0000000000000004" y="66" width="4.6666666666666679" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TgE-0S-ihA" customClass="DetailView" customModule="NASAPOD" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="217" width="414" height="301"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TgE-0S-ihA" customClass="DetailView" customModule="NASAPOD" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="696" width="414" height="305"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="a6h-4P-0JO" appends="YES" id="iaP-Y4-GbS"/>
@@ -193,10 +190,24 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="a12-ly-cc4" firstAttribute="leading" secondItem="8Aa-Dj-TsN" secondAttribute="leading" constant="2" id="3ts-PS-K67"/>
+                            <constraint firstItem="kfU-8D-ULQ" firstAttribute="top" secondItem="Dwu-4y-T2D" secondAttribute="bottom" id="AMZ-mu-rfQ"/>
+                            <constraint firstItem="Dwu-4y-T2D" firstAttribute="leading" secondItem="8Aa-Dj-TsN" secondAttribute="leading" id="BPH-DC-r2z"/>
+                            <constraint firstAttribute="trailing" secondItem="TgE-0S-ihA" secondAttribute="trailing" id="C20-Uz-wqW"/>
+                            <constraint firstItem="TgE-0S-ihA" firstAttribute="top" secondItem="8Aa-Dj-TsN" secondAttribute="bottom" constant="-40" id="LyD-4z-iKx"/>
+                            <constraint firstAttribute="bottom" secondItem="TgE-0S-ihA" secondAttribute="bottom" constant="-265" id="NqR-Wb-VL6"/>
+                            <constraint firstItem="Dwu-4y-T2D" firstAttribute="top" secondItem="8Aa-Dj-TsN" secondAttribute="top" id="TY3-Ho-aY3"/>
+                            <constraint firstItem="TgE-0S-ihA" firstAttribute="width" secondItem="8Aa-Dj-TsN" secondAttribute="width" id="Tri-rp-qaq"/>
+                            <constraint firstAttribute="trailing" secondItem="Dwu-4y-T2D" secondAttribute="trailing" id="ewa-W4-6UU"/>
+                            <constraint firstItem="TgE-0S-ihA" firstAttribute="leading" secondItem="8Aa-Dj-TsN" secondAttribute="leading" id="mxH-5q-iUP"/>
+                            <constraint firstItem="a12-ly-cc4" firstAttribute="top" secondItem="vFB-ER-Vqz" secondAttribute="bottom" constant="2" id="nLY-iJ-NIC"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="e1F-qD-bTl"/>
                     <connections>
                         <outlet property="detailView" destination="TgE-0S-ihA" id="rWH-Ad-RYw"/>
+                        <outlet property="detailViewTopConstraint" destination="LyD-4z-iKx" id="zG1-Qc-EJA"/>
                         <outlet property="imageScrollView" destination="Dwu-4y-T2D" id="dcP-a8-9d4"/>
                         <outlet property="imageTitleLabel" destination="a12-ly-cc4" id="JQY-MM-z5n"/>
                     </connections>
