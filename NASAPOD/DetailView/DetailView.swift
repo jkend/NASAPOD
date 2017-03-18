@@ -15,9 +15,9 @@ class DetailView: UIView {
     @IBOutlet weak var blurEffect: UIVisualEffectView!
     @IBOutlet weak var textView: UITextView!
     
-    
     @IBOutlet var topView: UIView!
     
+    // TODO should be read only
     var minimized = true
     
     var tabText: String? {
@@ -27,27 +27,44 @@ class DetailView: UIView {
     }
     var detailText: String? {
         didSet {
-            self.layoutIfNeeded()
-            textView?.layoutIfNeeded()
             textView?.text = detailText
-            textView?.sizeToFit()
+         //   textView?.sizeToFit()
+         //   self.layoutIfNeeded()
+        //    textView?.layoutIfNeeded()
+        //    textView?.text = detailText
+        //    textView?.sizeToFit()
             print("textview height = \(textView?.frame.height)")
             print("intrinsic height = \(textView?.intrinsicContentSize.height)")
             
-            self.sizeToFit()
+           self.sizeToFit()
+            print("views intrinsic size = \(self.intrinsicContentSize)")
         }
     }
-
+    override var bounds: CGRect {
+        didSet {
+            print("set bounds!")
+            print(bounds)
+        }
+    }
     override func sizeThatFits(_ size: CGSize) -> CGSize {
+        print("Detailview calling sizeThatFits")
         if textView == nil {
+            print("Returning 0")
             return CGSize.zero
         }
         textView.sizeToFit()
         let textFrame = textView.frame
         // TODO that constant is silly, use constraint vertical values maybe?
-        return CGSize(width: textFrame.width, height: textFrame.height + moreLabel.frame.height + 20)
+        let mysize = CGSize(width: textFrame.width, height: textFrame.height + moreLabel.frame.height + 20)
+        print(mysize)
+        return mysize
     }
     
+    override var intrinsicContentSize: CGSize {
+        print("intrinsic size!")
+        return sizeThatFits(CGSize(width: 0, height: 0))
+    }
+
     // MARK: init/load from nib
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -80,27 +97,4 @@ class DetailView: UIView {
         return view
     }
     
-    func show() {
-        guard let parentView = superview else {
-            return
-        }
-        UIView.animate(withDuration: 0.25, delay: 0.0, options: [], animations: {
-            self.frame.origin.y = parentView.frame.height - self.frame.height
-        }, completion: { (finished: Bool) in
-            self.minimized = false
-            self.moreLabel.text = "Hide"
-        })
-    }
-    
-    func hide() {
-        guard let parentView = superview else {
-            return
-        }
-        UIView.animate(withDuration: 0.25, delay: 0.0, options: [], animations: {
-            self.frame.origin.y = parentView.frame.height - self.moreLabel.frame.height
-        }, completion: { (finished: Bool) in
-            self.minimized = true
-            self.moreLabel.text = "More"
-        })
-    }
 }
