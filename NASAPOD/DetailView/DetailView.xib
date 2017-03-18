@@ -49,13 +49,12 @@
                 <constraint firstItem="Lx9-pm-219" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="4" id="Dv1-5m-f4I"/>
                 <constraint firstAttribute="bottom" secondItem="R8L-uH-PKR" secondAttribute="bottom" id="JBq-6E-JDR"/>
                 <constraint firstItem="Lx9-pm-219" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="NgX-uN-w0i"/>
-                <constraint firstAttribute="trailing" secondItem="Vb6-jv-nQl" secondAttribute="trailing" id="RHc-oG-zwP"/>
-                <constraint firstItem="R8L-uH-PKR" firstAttribute="height" secondItem="Vb6-jv-nQl" secondAttribute="height" id="XE0-52-hTd"/>
+                <constraint firstItem="Vb6-jv-nQl" firstAttribute="height" secondItem="R8L-uH-PKR" secondAttribute="height" id="XE0-52-hTd"/>
                 <constraint firstAttribute="trailing" secondItem="R8L-uH-PKR" secondAttribute="trailing" id="ZH1-Ck-KE0"/>
-                <constraint firstItem="R8L-uH-PKR" firstAttribute="bottom" secondItem="Vb6-jv-nQl" secondAttribute="bottom" id="Zzo-6V-C2Q"/>
-                <constraint firstItem="R8L-uH-PKR" firstAttribute="width" secondItem="Vb6-jv-nQl" secondAttribute="width" id="aeS-Bf-F5N"/>
+                <constraint firstItem="Vb6-jv-nQl" firstAttribute="bottom" secondItem="R8L-uH-PKR" secondAttribute="bottom" id="Zzo-6V-C2Q"/>
+                <constraint firstItem="Vb6-jv-nQl" firstAttribute="width" secondItem="R8L-uH-PKR" secondAttribute="width" id="aeS-Bf-F5N"/>
                 <constraint firstItem="R8L-uH-PKR" firstAttribute="top" secondItem="Lx9-pm-219" secondAttribute="bottom" constant="8" symbolic="YES" id="hak-eS-uIM"/>
-                <constraint firstItem="R8L-uH-PKR" firstAttribute="top" secondItem="Vb6-jv-nQl" secondAttribute="top" id="qAG-ML-3FJ"/>
+                <constraint firstItem="Vb6-jv-nQl" firstAttribute="top" secondItem="R8L-uH-PKR" secondAttribute="top" id="qAG-ML-3FJ"/>
                 <constraint firstItem="R8L-uH-PKR" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="wqO-TM-LgZ"/>
                 <constraint firstItem="Vb6-jv-nQl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yaL-eg-Ije"/>
             </constraints>
