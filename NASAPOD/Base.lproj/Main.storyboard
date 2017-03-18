@@ -188,10 +188,15 @@
                                     <outletCollection property="gestureRecognizers" destination="a6h-4P-0JO" appends="YES" id="iaP-Y4-GbS"/>
                                 </connections>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="nJf-bb-29z">
+                                <rect key="frame" x="189" y="350" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="a12-ly-cc4" firstAttribute="leading" secondItem="8Aa-Dj-TsN" secondAttribute="leading" constant="2" id="3ts-PS-K67"/>
+                            <constraint firstItem="nJf-bb-29z" firstAttribute="centerY" secondItem="8Aa-Dj-TsN" secondAttribute="centerY" id="4Bm-Ns-JKy"/>
                             <constraint firstItem="kfU-8D-ULQ" firstAttribute="top" secondItem="Dwu-4y-T2D" secondAttribute="bottom" id="AMZ-mu-rfQ"/>
                             <constraint firstItem="Dwu-4y-T2D" firstAttribute="leading" secondItem="8Aa-Dj-TsN" secondAttribute="leading" id="BPH-DC-r2z"/>
                             <constraint firstAttribute="trailing" secondItem="TgE-0S-ihA" secondAttribute="trailing" id="C20-Uz-wqW"/>
@@ -202,6 +207,7 @@
                             <constraint firstAttribute="trailing" secondItem="Dwu-4y-T2D" secondAttribute="trailing" id="ewa-W4-6UU"/>
                             <constraint firstItem="TgE-0S-ihA" firstAttribute="leading" secondItem="8Aa-Dj-TsN" secondAttribute="leading" id="mxH-5q-iUP"/>
                             <constraint firstItem="a12-ly-cc4" firstAttribute="top" secondItem="vFB-ER-Vqz" secondAttribute="bottom" constant="2" id="nLY-iJ-NIC"/>
+                            <constraint firstItem="nJf-bb-29z" firstAttribute="centerX" secondItem="8Aa-Dj-TsN" secondAttribute="centerX" id="v0a-aI-38U"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="e1F-qD-bTl"/>
@@ -210,6 +216,7 @@
                         <outlet property="detailViewTopConstraint" destination="LyD-4z-iKx" id="zG1-Qc-EJA"/>
                         <outlet property="imageScrollView" destination="Dwu-4y-T2D" id="dcP-a8-9d4"/>
                         <outlet property="imageTitleLabel" destination="a12-ly-cc4" id="JQY-MM-z5n"/>
+                        <outlet property="loadingSpinner" destination="nJf-bb-29z" id="xbs-1v-lMK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n5C-2q-lbm" userLabel="First Responder" sceneMemberID="firstResponder"/>

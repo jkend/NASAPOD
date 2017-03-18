@@ -17,6 +17,7 @@ class PODViewController: UIViewController, UIScrollViewDelegate {
     }
 
 
+    @IBOutlet weak var loadingSpinner: UIActivityIndicatorView!
     @IBOutlet weak var detailView: DetailView!
 
     private var podImageView = UIImageView()
@@ -126,12 +127,14 @@ class PODViewController: UIViewController, UIScrollViewDelegate {
             return
         }
         if let url = URL(string: imageURL) {
+            loadingSpinner.startAnimating()
             DispatchQueue.global(qos: .userInitiated).async {
                 guard imageURL == url.absoluteString else {
                     return
                 }
                 let dataFromUrl = NSData(contentsOf: url)
                 DispatchQueue.main.async { [weak weakSelf = self] in
+                    weakSelf?.loadingSpinner.stopAnimating()
                     if let imageData = dataFromUrl {
                         let apodImage = UIImage(data: imageData as Data)
                         weakSelf?.apodImage = apodImage
