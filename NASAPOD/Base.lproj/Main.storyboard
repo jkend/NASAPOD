@@ -40,8 +40,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mH6-XY-OhR" userLabel="contentView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="515"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="753" text="Astronomy Picture of the Day" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNU-Jn-bAc">
-                                                <rect key="frame" x="57" y="20" width="301" height="27"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="753" text="Astronomy Picture of the Day" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNU-Jn-bAc">
+                                                <rect key="frame" x="20" y="20" width="374" height="27"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -80,13 +80,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="225" scrollEnabled="NO" editable="NO" text="NASA's APOD archives go back to 1995!" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFE-Fs-8Vu">
-                                                <rect key="frame" x="48" y="407" width="318" height="38"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="225" scrollEnabled="NO" editable="NO" text="NASA's APOD archives go back to 1995!" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFE-Fs-8Vu" userLabel="Archive Notice Text View">
+                                                <rect key="frame" x="20" y="407" width="374" height="38"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="224" verticalCompressionResistancePriority="751" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3c-6l-rOg">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="224" verticalCompressionResistancePriority="751" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3c-6l-rOg" userLabel="Blurb Text View">
                                                 <rect key="frame" x="8" y="55" width="398" height="82"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <string key="text"> Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer.</string>
@@ -104,8 +104,12 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="NNU-Jn-bAc" firstAttribute="centerX" secondItem="mH6-XY-OhR" secondAttribute="centerX" id="4ij-UA-mx0"/>
+                                            <constraint firstItem="sFE-Fs-8Vu" firstAttribute="leading" secondItem="mH6-XY-OhR" secondAttribute="leading" constant="20" symbolic="YES" id="5Nn-1m-jfs"/>
+                                            <constraint firstAttribute="trailing" secondItem="NNU-Jn-bAc" secondAttribute="trailing" constant="20" symbolic="YES" id="5ih-cH-MfD"/>
                                             <constraint firstItem="cE9-Fj-Lmk" firstAttribute="centerX" secondItem="mH6-XY-OhR" secondAttribute="centerX" id="CLq-97-lqN"/>
                                             <constraint firstItem="cE9-Fj-Lmk" firstAttribute="top" secondItem="w3c-6l-rOg" secondAttribute="bottom" constant="8" symbolic="YES" id="Drc-EH-n60"/>
+                                            <constraint firstItem="NNU-Jn-bAc" firstAttribute="leading" secondItem="mH6-XY-OhR" secondAttribute="leading" constant="20" symbolic="YES" id="FFz-IO-M31"/>
                                             <constraint firstItem="w3c-6l-rOg" firstAttribute="top" secondItem="NNU-Jn-bAc" secondAttribute="bottom" constant="8" symbolic="YES" id="HQL-Fx-EFB"/>
                                             <constraint firstItem="w3c-6l-rOg" firstAttribute="centerX" secondItem="mH6-XY-OhR" secondAttribute="centerX" id="Hfr-yi-aba"/>
                                             <constraint firstItem="31s-sc-UjO" firstAttribute="leading" secondItem="mH6-XY-OhR" secondAttribute="leading" constant="20" symbolic="YES" id="IAU-qc-HPC"/>
@@ -114,7 +118,7 @@
                                             <constraint firstItem="sFE-Fs-8Vu" firstAttribute="top" secondItem="iah-La-FsF" secondAttribute="bottom" constant="8" symbolic="YES" id="Os3-vq-FZt"/>
                                             <constraint firstItem="NNU-Jn-bAc" firstAttribute="top" secondItem="mH6-XY-OhR" secondAttribute="top" constant="20" symbolic="YES" id="PEx-rg-6zz"/>
                                             <constraint firstItem="1ba-t4-fXV" firstAttribute="leading" secondItem="6ut-ld-STJ" secondAttribute="trailing" constant="8" symbolic="YES" id="QRy-ch-HGJ"/>
-                                            <constraint firstItem="NNU-Jn-bAc" firstAttribute="centerX" secondItem="mH6-XY-OhR" secondAttribute="centerX" id="YUg-9N-vWM"/>
+                                            <constraint firstAttribute="trailing" secondItem="sFE-Fs-8Vu" secondAttribute="trailing" constant="20" symbolic="YES" id="ZCj-9I-Rn7"/>
                                             <constraint firstItem="iah-La-FsF" firstAttribute="top" secondItem="31s-sc-UjO" secondAttribute="bottom" constant="8" symbolic="YES" id="ciX-Cb-O4X"/>
                                             <constraint firstAttribute="trailing" secondItem="w3c-6l-rOg" secondAttribute="trailing" constant="8" id="dYF-V9-vfB"/>
                                             <constraint firstItem="sFE-Fs-8Vu" firstAttribute="top" secondItem="mH6-XY-OhR" secondAttribute="top" constant="407" id="epI-yN-8Qi"/>
@@ -123,6 +127,7 @@
                                             <constraint firstItem="1ba-t4-fXV" firstAttribute="top" secondItem="sFE-Fs-8Vu" secondAttribute="bottom" constant="19" id="hHj-gE-xaD"/>
                                             <constraint firstAttribute="bottom" secondItem="6ut-ld-STJ" secondAttribute="bottom" constant="20" symbolic="YES" id="kgu-xG-YOF"/>
                                             <constraint firstItem="ixL-hs-aG8" firstAttribute="leading" secondItem="cE9-Fj-Lmk" secondAttribute="trailing" constant="8" symbolic="YES" id="lbJ-fF-kng"/>
+                                            <constraint firstItem="sFE-Fs-8Vu" firstAttribute="centerX" secondItem="mH6-XY-OhR" secondAttribute="centerX" id="p3b-VE-QG2"/>
                                             <constraint firstItem="w3c-6l-rOg" firstAttribute="leading" secondItem="mH6-XY-OhR" secondAttribute="leading" constant="8" id="u8r-pU-6wE"/>
                                             <constraint firstItem="6ut-ld-STJ" firstAttribute="top" secondItem="sFE-Fs-8Vu" secondAttribute="bottom" constant="8" symbolic="YES" id="xHO-Jj-9Nt"/>
                                             <constraint firstItem="31s-sc-UjO" firstAttribute="top" secondItem="cE9-Fj-Lmk" secondAttribute="bottom" constant="8" symbolic="YES" id="zQO-eC-92Q"/>
