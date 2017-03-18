@@ -21,6 +21,9 @@ class PODViewController: UIViewController, UIScrollViewDelegate {
 
     private var podImageView = UIImageView()
     
+    @IBOutlet weak var detailViewTopConstraint: NSLayoutConstraint!
+    var initialDetailViewTop: CGFloat = 0.0
+    
     var currentAPOD: APOD! {
         didSet {
             imageURL = currentAPOD.imageURL
@@ -77,33 +80,35 @@ class PODViewController: UIViewController, UIScrollViewDelegate {
         imageTitleLabel?.text = currentAPOD.title ?? " "
         imageTitleLabel?.sizeToFit()
         self.title = currentAPOD.dateString ?? "APOD"
+        initialDetailViewTop = detailViewTopConstraint.constant
         hideDetailView()
     }
     
 
     @IBAction func toggleDetailView(_ sender: UITapGestureRecognizer) {
         if sender.state == .ended {
-            print(detailView.frame.height)
-            //if detailViewShowing {
-            if !detailView.minimized {
-            /*    UIView.animate(withDuration: 0.25, delay: 0.0, options: [], animations: {
-                    self.detailView.frame.origin.y = self.view.frame.height - 20
+            print(detailView.bounds.height)
+            if detailViewShowing {
+                detailViewTopConstraint.constant = initialDetailViewTop
+               UIView.animate(withDuration: 0.25, delay: 0.0, options: [], animations: {
+                    self.view.layoutIfNeeded()
                 }, completion: { (finished: Bool) in
                     self.detailViewShowing = false
                     self.detailView.tabText = "More"
                 })
- */
-                detailView.hide()
+ 
+
             }
             else {
-              /*  UIView.animate(withDuration: 0.25, delay: 0.0, options: [], animations: {
-                    self.detailView.frame.origin.y = self.view.frame.height - self.detailView.frame.height
+                detailViewTopConstraint.constant = -self.detailView.intrinsicContentSize.height
+                UIView.animate(withDuration: 0.25, delay: 0.0, options: [], animations: {
+                    self.view.layoutIfNeeded()
                 }, completion: { (finished: Bool) in
                     self.detailViewShowing = true
                     self.detailView.tabText = "Hide"
                 })
-            */
-                detailView.show()
+            
+
             }
         }
     }
@@ -112,7 +117,7 @@ class PODViewController: UIViewController, UIScrollViewDelegate {
       //  detailView?.frame.origin.y = view.frame.height - 20
       //  detailView?.tabText = "More"
       //  detailViewShowing = false
-        detailView.hide()
+      //  detailView.hide()
     }
     
     
