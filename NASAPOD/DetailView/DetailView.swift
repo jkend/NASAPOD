@@ -40,12 +40,7 @@ class DetailView: UIView {
             print("views intrinsic size = \(self.intrinsicContentSize)")
         }
     }
-    override var bounds: CGRect {
-        didSet {
-            print("set bounds!")
-            print(bounds)
-        }
-    }
+
     override func sizeThatFits(_ size: CGSize) -> CGSize {
         print("Detailview calling sizeThatFits")
         if textView == nil {
@@ -61,7 +56,6 @@ class DetailView: UIView {
     }
     
     override var intrinsicContentSize: CGSize {
-        print("intrinsic size!")
         return sizeThatFits(CGSize(width: 0, height: 0))
     }
 
