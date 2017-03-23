@@ -27,6 +27,7 @@ class PODViewController: UIViewController, UIScrollViewDelegate {
     
     var currentAPOD: APOD! {
         didSet {
+            hideDetailView()
             imageURL = currentAPOD.imageURL
             if view.window != nil {
                 setUIElements()
@@ -73,8 +74,16 @@ class PODViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    // It looks better if we hide the detail view on device rotate
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        hideDetailView()
+    }
+    
     private func setUIElements() {
         if currentAPOD == nil {
+            // If there's no APOD, don't just let that More tab sit there
+            detailView.isHidden = true;
             return
         }
         detailView?.detailText = currentAPOD.detailText ?? " "
@@ -82,7 +91,8 @@ class PODViewController: UIViewController, UIScrollViewDelegate {
         imageTitleLabel?.sizeToFit()
         self.title = currentAPOD.dateString ?? "APOD"
         initialDetailViewTop = detailViewTopConstraint.constant
-        hideDetailView()
+        detailView.isHidden = false;
+        
     }
     
 
@@ -115,10 +125,11 @@ class PODViewController: UIViewController, UIScrollViewDelegate {
     }
     
     private func hideDetailView() {
-      //  detailView?.frame.origin.y = view.frame.height - 20
-      //  detailView?.tabText = "More"
-      //  detailViewShowing = false
-      //  detailView.hide()
+        if detailViewShowing {
+            detailViewTopConstraint.constant = initialDetailViewTop
+            detailViewShowing = false
+            detailView.tabText = "More"
+        }
     }
     
     
